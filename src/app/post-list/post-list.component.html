@@ -1,0 +1,22 @@
+<div class="container">
+    <ng-container *ngFor="let post of posts | async">
+        <div style="cursor: pointer;"
+             (click)="onPostClick(post)"
+        >
+            <div>
+                ID: {{ post.id }}
+            </div>
+    
+            <div>
+                Title: {{ post.title }}
+            </div>
+    
+            <div>
+                body: {{ post.body }}
+            </div>
+    
+        </div>
+        <hr>
+
+    </ng-container>
+</div>
