@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostsRoutingModule } from './posts-routing.module';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -13,6 +14,7 @@ import { PostsRoutingModule } from './posts-routing.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     PostsRoutingModule
   ]
 })

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PostListResolver } from '../resolvers/posts-list.resolver.service';
-import { PostDetailsComponent } from './post-details/post-details.component';
-import { PostListComponent } from './post-list/post-list.component';
+import { PostListResolver } from './resolvers/posts-list.resolver.service';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 const routes: Routes = [
   {

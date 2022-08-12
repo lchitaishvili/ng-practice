@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { IPost } from '../../interfaces/post.interface';
 import { ListService } from '../../services/list.service';
 

@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, of, Subject } from 'rxjs';
-import { ILoginData } from '../interfaces/login-data.interface';
 import { IPost } from '../interfaces/post.interface';
 
 @Injectable({

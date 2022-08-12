@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginGuard } from './guards/login.guard';
-import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginGuard } from './core/guards/login.guard';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -13,16 +11,16 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+    loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule),
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule),
     canLoad: [LoginGuard]
   },
   {
     path: 'posts',
-    loadChildren: () => import('./post/post.module').then(m => m.PostModule),
+    loadChildren: () => import('./features/post/post.module').then(m => m.PostModule),
     canLoad: [LoginGuard]
   },
   {
