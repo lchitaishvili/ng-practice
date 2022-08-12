@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { IPost } from '../interfaces/post.interface';
-import { ListService } from '../services/list.service';
+import { IPost } from '../../interfaces/post.interface';
+import { ListService } from '../../services/list.service';
 
 @Component({
   selector: 'app-post-list',
@@ -21,7 +21,7 @@ export class PostListComponent implements OnInit {
 
   public onPostClick(post: IPost): void {
     this.listService.selectedPost.next(post);
-    this.router.navigate(['/posts', post.id]);
+    this.router.navigate(['posts', post.id]);
   }
 
 }

@@ -10,8 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +17,7 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     DashboardComponent,
     CartComponent,
     LoginComponent,
-    PageNotFoundComponent,
-    PostListComponent,
-    PostDetailsComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
