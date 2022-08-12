@@ -4,9 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginGuard } from './guards/login.guard';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PostDetailsComponent } from './post/post-details/post-details.component';
-import { PostListComponent } from './post/post-list/post-list.component';
-import { PostListResolver } from './resolvers/posts-list.resolver.service';
 
 const routes: Routes = [
   {
@@ -16,16 +13,17 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [LoginGuard]
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    canLoad: [LoginGuard]
   },
   {
     path: 'posts',
-    loadChildren: () => import('./post/post.module').then(m => m.PostModule)
+    loadChildren: () => import('./post/post.module').then(m => m.PostModule),
+    canLoad: [LoginGuard]
   },
   {
     path: '**',
