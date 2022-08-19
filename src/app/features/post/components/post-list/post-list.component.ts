@@ -1,27 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IPost } from '../../interfaces/post.interface';
-import { ListService } from '../../services/list.service';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.scss']
+  styleUrls: ['./post-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent {
 
-  public posts: BehaviorSubject<IPost[]> = new BehaviorSubject([] as IPost[]);
+  @Input() posts: IPost[] = [];
+  @Output() postClicked = new EventEmitter<IPost>();
 
-  constructor(private listService: ListService, private router: Router, private route: ActivatedRoute) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.posts.next(this.route.snapshot.data['posts']);
-  }
-
-  public onPostClick(post: IPost): void {
-    this.listService.selectedPost.next(post);
-    this.router.navigate(['posts', post.id]);
+  public onClickPost(post: IPost): void {
+    this.postClicked.emit(post);
   }
 
 }

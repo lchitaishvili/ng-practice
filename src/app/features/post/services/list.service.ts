@@ -9,7 +9,6 @@ import { IPost } from '../interfaces/post.interface';
 export class ListService {
 
   private baseUrl = 'https://jsonplaceholder.typicode.com';
-  public selectedPost: BehaviorSubject<IPost> = new BehaviorSubject({id: '', userId: '', title: '', body: ''});
 
   constructor(private http: HttpClient) { }
 

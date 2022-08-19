@@ -1,0 +1,7 @@
+<ng-container *ngIf="detailsView$ | async">
+    <app-post-details [post]="(selectedPost$ | async)!"></app-post-details>
+</ng-container>
+
+<app-post-list [posts]="(posts$ | async)!"
+               (postClicked)="onPostClick($event)"
+></app-post-list>

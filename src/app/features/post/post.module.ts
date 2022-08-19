@@ -4,6 +4,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostsRoutingModule } from './posts-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { PostComponent } from './components/post/post.component';
 
 
 
@@ -11,6 +12,7 @@ import { SharedModule } from '../../shared/shared.module';
   declarations: [
     PostListComponent,
     PostDetailsComponent,
+    PostComponent,
   ],
   imports: [
     CommonModule,

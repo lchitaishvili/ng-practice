@@ -1,20 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { IPost } from '../../interfaces/post.interface';
-import { ListService } from '../../services/list.service';
 
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
-  styleUrls: ['./post-details.component.scss']
+  styleUrls: ['./post-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostDetailsComponent implements OnInit {
+export class PostDetailsComponent {
+  @Input() post: IPost = {title: '', body: '', id: '', userId: ''}
 
-  public post$: BehaviorSubject<IPost> = new BehaviorSubject({id: '', userId: '', title: '', body: ''});
-
-  constructor(private listService: ListService) { }
-
-  ngOnInit(): void {
-    this.post$ = this.listService.selectedPost;
-  }
+  constructor() { }
 }
