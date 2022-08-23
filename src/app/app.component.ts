@@ -8,7 +8,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  title = 'test-app';
+  title = 'test-app1';
 
   constructor(private router: Router) {}
 
@@ -25,5 +25,21 @@ export class AppComponent implements OnInit {
       }
     }
     );
+  }
+
+  changeTitle() {
+    this.title = 'test-app2';
+    this.someMethod();
+  }
+
+  someMethod() {
+    console.log(1);
+  }
+
+  getSomeString() {
+    if (this.title === 'test-app1') {
+      return '1';
+    }
+    return '2';
   }
 }
